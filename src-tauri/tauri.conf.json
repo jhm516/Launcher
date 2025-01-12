@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MRON Launcher",
+  "version": "1.2.4",
+  "identifier": "me.je3ns.app",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "bun run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "MRON Launcher | 1.2.4",
+        "devtools": true,
+        "width": 350,
+        "height": 400,
+        "resizable": false,
+        "maximizable": false,
+        "center": true,
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  },
+  "plugins": {
+    "updater": {
+      "windows": {
+        "installMode": "passive"
+      },
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDExNjYyMjE1Qjk3QkY1MTMKUldRVDlYdTVGU0ptRVRZaFZ1enJobUlaSVE3NWNvQWgwYTc3VzdFYnJwUGowaHBjNW9MVVU5TFoK",
+      "endpoints": [
+        "https://github.com/awalki/mron-launcher/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}
